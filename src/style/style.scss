@@ -42,7 +42,12 @@
     cursor: pointer;
   }
   .exchange_rate {
+    display: flex;
+    flex-direction: column;
     font-size: 30px;
     margin-right: 50px;
+    .rate_usd {
+      margin-bottom: 15px;
+    }
   }
 }
