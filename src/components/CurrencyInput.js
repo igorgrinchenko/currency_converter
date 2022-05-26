@@ -6,7 +6,10 @@ import "../style/style.scss";
 
 const ariaLabel = { "aria-label": "description" };
 
-const CurrencyInput = () => {
+const CurrencyInput = ({ getCurrencyValue }) => {
+  const onChange = (event) => {
+    getCurrencyValue(event);
+  };
   return (
     <div className="container">
       <Box
@@ -26,6 +29,7 @@ const CurrencyInput = () => {
           sx={{ color: "white", fontSize: "20px" }}
           placeholder="Enter currency value"
           inputProps={ariaLabel}
+          onChange={(event) => onChange(event)}
         />
       </Box>
     </div>

@@ -7,11 +7,12 @@ import Select from "@mui/material/Select";
 // Styles
 import "../style/style.scss";
 
-const SelectCurrency = () => {
+const SelectCurrency = ({ getCurrency }) => {
   const [currency, setCurrency] = useState("");
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
+    getCurrency(event, event.target.value);
   };
 
   return (
@@ -19,7 +20,7 @@ const SelectCurrency = () => {
       <FormControl
         variant="standard"
         sx={{
-          marginTop: 5,
+          marginTop: 10,
           borderBottom: "2px solid white",
           color: "white",
           width: "500px",
@@ -29,7 +30,7 @@ const SelectCurrency = () => {
           sx={{ color: "white", fontSize: "20px" }}
           id="demo-simple-select-standard-label"
         >
-          Currency
+          Choose currency
         </InputLabel>
         <Select
           sx={{ color: "white", fontSize: "25px" }}
